@@ -74,7 +74,8 @@ export default function Market() {
         return;
       }
 
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/ai/recommend`, {
+      const apiBase = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${apiBase}/api/ai/recommend`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

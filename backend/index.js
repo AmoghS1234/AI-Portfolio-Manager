@@ -793,7 +793,5 @@ app.get('/api/market/:symbol', (req, res) => {
 // Discover all available symbols is moved above.
 
 initializeCache();
-app.listen(PORT, () => {
-  console.log(`PortfolioSim Backend is running on port ${PORT}`);
-  console.log(`Time Machine API ready. No futures allowed.`);
-});
+
+export default app;

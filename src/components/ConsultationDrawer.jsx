@@ -58,7 +58,8 @@ export default function ConsultationDrawer({ isOpen, onClose, symbol, currentSim
     setError(null);
     setRecommendation(null);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/ai/multiagent`, {
+      const apiBase = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${apiBase}/api/ai/multiagent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ symbol: symbol.toUpperCase(), date: currentSimulatedDate })

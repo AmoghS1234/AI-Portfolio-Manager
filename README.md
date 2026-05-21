@@ -60,18 +60,40 @@ For a deeper dive into the platform's architecture, check out these files in the
    \`\`\`env
    VITE_SUPABASE_URL=your_supabase_url
    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-   VITE_API_URL=your_backend_api_url (Optional for external AI)
+   VITE_API_URL=http://localhost:5000
+   VITE_FINNHUB_API_KEY=your_finnhub_api_key
+   GEMINI_API_KEY=your_gemini_api_key
+   GROQ_API_KEY=your_groq_api_key
+   FRONTEND_URL=http://localhost:5173
    \`\`\`
 
-4. **Start the Development Server**
-   \`\`\`bash
+4. **Start the Backend Locally**
+   ```bash
+   cd backend
+   npm install
+   npm start
+   ```
+
+5. **Start the Frontend Locally**
+   ```bash
+   cd ..
+   npm install
    npm run dev
-   \`\`\`
+   ```
 
-5. **Open in Browser**
+6. **Open in Browser**
+   Navigate to `http://localhost:5173`
    Navigate to \`http://localhost:5173\`
 
 ## 🔒 Security Features
 - **Dynamic Document Verification**: Registration includes real-time regex validation for international documents (e.g., 12-digit Indian Aadhaar, 9-digit US SSN).
 - **Password Strength Meter**: Real-time feedback requiring uppercase, lowercase, numbers, and special characters.
 - **Supabase RLS**: Row Level Security ensures users can only read and write their own transactional data and financial profiles.
+
+
+
+
+
+
+
+

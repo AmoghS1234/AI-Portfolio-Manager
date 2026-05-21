@@ -58,7 +58,8 @@ export default function AssetDetails() {
 
     dataDebounceRef.current = setTimeout(async () => {
       try {
-        const url = `${import.meta.env.VITE_API_URL}/api/market/${symbol}?date=${currentSimulatedDate}`;
+        const apiBase = import.meta.env.VITE_API_URL || '';
+        const url = `${apiBase}/api/market/${symbol}?date=${currentSimulatedDate}`;
         const response = await fetch(url);
         const data = await response.json();
         setAssetData(data);

@@ -76,7 +76,8 @@ const useSimulationStore = create((set, get) => ({
     }
     
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/market/batch?date=${simDate}&timeframe=${timeframe}`);
+      const apiBase = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${apiBase}/api/market/batch?date=${simDate}&timeframe=${timeframe}`);
       const data = await res.json();
       if (Array.isArray(data)) {
         set((state) => ({
